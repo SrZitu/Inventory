@@ -29,8 +29,9 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
     Route::get('/admin/profile', 'profile')->name('admin.profile');
     Route::get('/admin/edit', 'editProfile')->name('admin.edit');
-  Route::post('/admin/store', 'storeProfile')->name('store.profile');
-
+    Route::post('/admin/store', 'storeProfile')->name('store.profile');
+    Route::get('/admin/changePassword', 'changePassword')->name('change.password');
+   Route::post('/admin/updatePassword', 'updatePassword')->name('update.password');
 
 });
 
