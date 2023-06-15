@@ -10,7 +10,7 @@
     <meta content="Themesdesign" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="    {{ asset('backend/assets/images/favicon.ico') }}">
-  
+
     <!-- jquery.vectormap css -->
     <link href="    {{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}"
         rel="stylesheet" type="text/css" />
@@ -30,7 +30,11 @@
     <link href="    {{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="    {{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-
+    {{-- toatr css --}}
+    <!-- Toastr -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 
 <body data-topbar="dark">
@@ -101,6 +105,35 @@
 
     <!-- App js -->
     <script src=" {{ asset('backend/assets/js/app.js') }}"></script>
+    
+    <!-- Toastr js-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    @if (session()->has('message'))
+        <script>
+            var type = "{{ session('alert-type', 'info') }}";
+            var message = "{{ session('message') }}";
+
+            switch (type) {
+                case 'info':
+                    toastr.info(message);
+                    break;
+                case 'success':
+                    toastr.success(message);
+                    break;
+                case 'warning':
+                    toastr.warning(message);
+                    break;
+                case 'error':
+                    toastr.error(message);
+                    break;
+                default:
+                    toastr.info(message);
+                    break;
+            }
+        </script>
+    @endif
+
 </body>
 
 </html>
