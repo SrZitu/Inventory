@@ -34,7 +34,7 @@
     <!-- Toastr -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 </head>
 
 <body data-topbar="dark">
@@ -105,7 +105,7 @@
 
     <!-- App js -->
     <script src=" {{ asset('backend/assets/js/app.js') }}"></script>
-    
+
     <!-- Toastr js-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
