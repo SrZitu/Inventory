@@ -17,6 +17,7 @@
 -   [Admin Profile And Image Update](https://github.com/SrZitu/Inventory/commit/c76ab3c2ee289dfa2b99dd6e992924b936d1c68e)
 -   [Adding Toster In For View Message](https://github.com/SrZitu/Inventory/commit/f0df435d7bb7489ddad95731cae4a0bf75157ad9)
 -   [Display Toster Message in Login and Logout](https://github.com/SrZitu/Inventory/commit/48d7394c0b60b38b5b21e1e174de30a39a6af4f4)
+-   [Admin Profile Change Password](https://github.com/SrZitu/Inventory/commit/20904c38bfd0a7cedb411ad495631f8242d8793f)
 
 
 ### Premium Partners
