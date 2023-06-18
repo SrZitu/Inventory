@@ -91,7 +91,7 @@ class AboutController extends Controller
             $name_gen = hexdec(uniqid()) . '.' . $multiImage->getClientOriginalExtension();  // 3434343443.jpg
 
             Image::make($multiImage)->resize(220, 220)->save('upload/multi/' . $name_gen);
-            $save_url = 'upload/home_about/' . $name_gen;
+            $save_url = 'upload/multi/' . $name_gen;
             MultiImage::insert(
                 [
                     'multi_image' => $save_url,
@@ -166,6 +166,6 @@ class AboutController extends Controller
 
 
 
-     }// End Method 
+     }// End Method
 
 }
