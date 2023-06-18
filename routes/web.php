@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\ProfileController;
@@ -32,28 +33,26 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/edit', 'editProfile')->name('admin.edit');
     Route::post('/admin/store', 'storeProfile')->name('store.profile');
     Route::get('/admin/changePassword', 'changePassword')->name('change.password');
-   Route::post('/admin/updatePassword', 'updatePassword')->name('update.password');
-
+    Route::post('/admin/updatePassword', 'updatePassword')->name('update.password');
 });
 
 
 
-Route::get('/phpinfo', function() {
-
-if (extension_loaded('gd')&& function_exists('gd_info')){
-    echo "GD installed";
-}else{
-    echo "GD not installed ";
-}
-    return phpinfo();
-});
 //Home side all routes
 Route::controller(HomeSliderController::class)->group(function () {
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
     Route::post('/update/slider', 'UpdateSlider')->name('update.slider');
+});
 
+//About page all routes
+Route::controller(AboutController::class)->group(function () {
+    Route::get('/about/page', 'aboutPage')->name('about.page');
+     Route::post('/update/about', 'UpdateAbout')->name('update.about');
 
 });
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
