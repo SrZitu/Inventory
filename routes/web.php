@@ -47,9 +47,14 @@ Route::controller(HomeSliderController::class)->group(function () {
 //About page all routes
 Route::controller(AboutController::class)->group(function () {
     Route::get('/about/page', 'aboutPage')->name('about.page');
-     Route::post('/update/about', 'UpdateAbout')->name('update.about');
-     Route::get('/about', 'HomeAbout')->name('home.about');
-
+    Route::post('/update/about', 'UpdateAbout')->name('update.about');
+    Route::get('/home/about', 'HomeAbout')->name('home.about');
+    Route::get('/home/multiImage', 'multiImagePage')->name('multiImage.page');
+    Route::post('/multiImage/store', 'storeMultiImage')->name('storeMultiImage.page');
+    Route::get('/multiImage/show', 'showMultiImage')->name('all.multiImage.page');
+    Route::get('/multiImage/edit/{id}', 'editMultiImage')->name('multiImage.Edit.page');
+    Route::post('/multiImage/update/', 'updateMultiImage')->name('update.multi.image');
+    Route::get('/multiImage/delete/{id}', 'DeleteMultiImage')->name('delete.multi.image');
 });
 
 
