@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeSliderController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,8 +37,6 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/admin/updatePassword', 'updatePassword')->name('update.password');
 });
 
-
-
 //Home side all routes
 Route::controller(HomeSliderController::class)->group(function () {
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
@@ -53,12 +52,20 @@ Route::controller(AboutController::class)->group(function () {
     Route::post('/multiImage/store', 'storeMultiImage')->name('storeMultiImage.page');
     Route::get('/multiImage/show', 'showMultiImage')->name('all.multiImage.page');
     Route::get('/multiImage/edit/{id}', 'editMultiImage')->name('multiImage.Edit.page');
-    Route::post('/multiImage/update/', 'updateMultiImage')->name('update.multi.image');
+    Route::post('/multiImage/update', 'updateMultiImage')->name('update.multi.image');
     Route::get('/multiImage/delete/{id}', 'DeleteMultiImage')->name('delete.multi.image');
 });
 
-
-
+//Portfolio page all routes
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('/portfolio/all/page', 'portfolioPage')->name('portfolio_all.page');
+    Route::get('/update/portfolio', 'updateportfolio')->name('update.portfolio');
+    Route::get('/portfolio/page', 'singlePortfolio')->name('portfolio.page');
+    Route::post('/portfolio/store', 'storePortfolio')->name('store.portfolio');
+    Route::get('/portfolio/edit/{id}', 'editPortfolio')->name('edit.portfolio');
+    Route::post('/portfolio/update', 'updatePortfolio')->name('update.portfolio');
+    Route::get('/portfolio/delete/{id}', 'deletePortfolio')->name('delete.portfolio');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

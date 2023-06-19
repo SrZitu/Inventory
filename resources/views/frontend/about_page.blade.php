@@ -1,7 +1,7 @@
 @extends('frontend.main_master')
 @section('main')
     @php
-        
+       
         $allMultiImage = App\Models\MultiImage::all();
     @endphp
 
