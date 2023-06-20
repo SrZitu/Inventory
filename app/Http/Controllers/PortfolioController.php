@@ -132,8 +132,9 @@ class PortfolioController extends Controller
 
     //portfolio details
 
-    public function detailsPortfolio($id){
+    public function detailsPortfolio($id)
+    {
         $portfolio = Portfolio::findOrFail($id);
-        return view('frontend.portfolio.portfolio_details',compact('portfolio'));
+        return view('frontend.portfolio.portfolio_details', compact('portfolio'));
     }
 }

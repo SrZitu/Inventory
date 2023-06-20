@@ -4,7 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BlogCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,6 +68,22 @@ Route::controller(PortfolioController::class)->group(function () {
      Route::get('/portfolio/details/{id}', 'detailsPortfolio')->name('portfolio.details');
 
 });
+
+
+//Blog Category page all routes
+Route::controller(BlogCategoryController::class)->group(function () {
+    Route::get('/blogCategory/all/page', 'blogCategoryPage')->name('blog_category_all.page');
+    Route::get('/blogCategory/page', 'singleBlogCategory')->name('blog_category.page');
+    Route::post('/blogCategory/store', 'storeBlogCategory')->name('store.blogCategory');
+    Route::get('/blogCategory/edit/{id}', 'editblogCategory')->name('edit.blogCategory');
+    Route::post('/blogCategory/update/{id}', 'updateBlogCategory')->name('update.blogCategory');
+    Route::get('/blogCategory/delete/{id}', 'deleteBlogCategory')->name('delete.blogCategory');
+    //  Route::get('/portfolio/details/{id}', 'detailsPortfolio')->name('portfolio.details');
+
+});
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
