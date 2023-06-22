@@ -55,20 +55,34 @@
 
 
 
-
                 <li class="menu-title">Pages</li>
+
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-account-circle-line"></i>
-                        <span>Block Page Setup</span>
+                        <span>Blog Category Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('blog_category_all.page') }}">All BLog Page</a></li>
-                        <li><a href="{{ route('blog_category.page') }}">Add BLog Page</a></li>
+                        <li><a href="{{ route('blog_category_all.page') }}">All BLog Category</a></li>
+                        <li><a href="{{ route('blog_category.page') }}">Add BLog Category</a></li>
 
                     </ul>
                 </li>
+
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-account-circle-line"></i>
+                        <span>Blog Page Setup</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('blog_all.page') }}">All BLog Page</a></li>
+                        <li><a href="{{ route('blog.page') }}">Add BLog Page</a></li>
+
+                    </ul>
+                </li>
+
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">

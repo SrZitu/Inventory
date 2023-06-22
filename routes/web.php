@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,6 +81,22 @@ Route::controller(BlogCategoryController::class)->group(function () {
     Route::get('/blogCategory/delete/{id}', 'deleteBlogCategory')->name('delete.blogCategory');
     //  Route::get('/portfolio/details/{id}', 'detailsPortfolio')->name('portfolio.details');
 
+});
+
+
+
+
+//Blog  page all routes
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/blog/all/page', 'blogPages')->name('blog_all.page');
+    Route::get('/blog/page', 'Addblog')->name('blog.page');
+    Route::post('/blog/store', 'storeBlog')->name('store.blog');
+    Route::get('/blog/edit/{id}', 'editBlog')->name('edit.blog');
+    Route::post('/blog/update', 'updateBlog')->name('update.blog');
+    Route::get('/blog/delete/{id}', 'deleteBlog')->name('delete.blog');
+    Route::get('/blog/details/{id}', 'BlogDetails')->name('blog.details');
+    Route::get('/category/blog/{id}', 'CategoryBlog')->name('category.blog');
+    Route::get('/blog', 'Homeblog')->name('home.blog');
 });
 
 
