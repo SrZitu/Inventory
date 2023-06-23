@@ -22,13 +22,13 @@
                                     <li class="menu-item-has-children"><a href="#">Portfolio</a>
                                         <ul class="sub-menu">
                                             <li><a href="portfolio.html">Portfolio</a></li>
-                                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            <li><a href="">Portfolio Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="{{route('home.blog')}}">Our Blog</a>
 
                                     </li>
-                                    <li><a href="contact.html">contact me</a></li>
+                                    <li><a href="{{route('contact.page')}}">contact me</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
