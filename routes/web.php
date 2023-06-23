@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FooterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,7 +100,12 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/blog', 'Homeblog')->name('home.blog');
 });
 
+//Footer Page route
+Route::controller(FooterController::class)->group(function () {
+    Route::get('/footer/page', 'footerPage')->name('footer.page');
+    Route::post('/footer/about', 'updateFooter')->name('update.footer');
 
+});
 
 
 Route::middleware('auth')->group(function () {
