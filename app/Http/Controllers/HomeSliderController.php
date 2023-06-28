@@ -57,4 +57,8 @@ class HomeSliderController extends Controller
                 ->with($notification);
         } // end Else
     }
+
+    public function Home(){
+        return view('frontend.index');
+    }// end mehtod
 }
