@@ -70,6 +70,9 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::get('/portfolio/delete/{id}', 'deletePortfolio')->name('delete.portfolio');
      Route::get('/portfolio/details/{id}', 'detailsPortfolio')->name('portfolio.details');
 
+     //for front end
+     Route::get('/portfolio', 'Homeportfolio')->name('portfolio_page');
+
 });
 
 
@@ -113,7 +116,7 @@ Route::controller(ContactController::class)->group(function () {
     Route::get('/contact/page', 'contactPage')->name('contact.page');
     Route::post('/store/message', 'storeMessage')->name('store.message');
     Route::get('/contact/message', 'ContactMessage')->name('contact.message');
-    Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message'); 
+    Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message');
 
 });
 
