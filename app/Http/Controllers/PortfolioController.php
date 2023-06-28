@@ -139,7 +139,7 @@ class PortfolioController extends Controller
     }
 
     public function Homeportfolio(){
-        $portfolio = Portfolio::get();
+        $portfolio = Portfolio::paginate(4);
         return view('frontend.portfolio.portfolio_page', compact('portfolio'));
     }
 }
